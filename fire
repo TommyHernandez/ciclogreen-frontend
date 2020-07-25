@@ -1,0 +1,20 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBjv9uAQuaWvdZxIHp3zWJGVMO0rIqz6n4",
+    authDomain: "ciclogreen-login.firebaseapp.com",
+    databaseURL: "https://ciclogreen-login.firebaseio.com",
+    projectId: "ciclogreen-login",
+    storageBucket: "ciclogreen-login.appspot.com",
+    messagingSenderId: "761374133941",
+    appId: "1:761374133941:web:685c6c8a265ccc9ac4b8fc"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
