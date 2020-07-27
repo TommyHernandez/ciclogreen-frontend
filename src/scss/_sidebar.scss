@@ -1,0 +1,50 @@
+aside {
+  display: flex;
+  height: 0px;
+  width: 100%;
+  grid-area: aside;
+  background: $gray;
+  overflow: hidden;
+  transition: height ease-in-out 0.3s;
+
+  ul {
+    width: 100%;
+    overflow: hidden;
+    padding: 8px;
+    li {
+      display: block;
+      // height: 24px;
+      // line-height: 24px;
+      margin: 8px 0;
+      list-style: none;
+      border: 1px solid red;
+      overflow: hidden;
+
+      svg {
+        vertical-align: middle;
+      }
+
+      a {
+        display: inline-block;
+        padding: 2px 8px 2px 8px;
+        @include fontThin();
+        text-decoration: none;
+        transition: color ease-in-out 0.2;
+        color: $white;
+        font-size: 1.2rem;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+
+  &.showed {
+    height: 250px;
+  }
+  @media (min-width: 764px) {
+    height: 100vh;
+    max-width: 25%;
+  }
+}

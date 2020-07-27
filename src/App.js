@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Dashboard from './pages/dashboard';
+import Login from './pages/login';
+import Rutas from './pages/rutas';
+import Error from './pages/error';
+import { Sidebar, NavBar } from './components';
+import { AuthContext } from './context/AuthContext';
 
-function App() {
+const App = () => {
+  const [navOpen, setNavOpen] = useState(false);
+  const changeNavStatus = () => {
+    setNavOpen(!navOpen);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContext>
+      <Router>
+        <Switch>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <section className="dashboard">
+            <NavBar navHandler={changeNavStatus}/>
+            <Sidebar showed={navOpen}/>
+            <div className="content">
+              <Route exact path="/">
+                <Dashboard />
+              </Route>
+              <Route exact path="/rutas">
+                <Rutas />
+              </Route>
+            </div>
+          </section>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </AuthContext>
   );
-}
+};
 
 export default App;

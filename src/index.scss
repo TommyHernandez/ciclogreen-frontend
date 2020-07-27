@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+$fontbase: 'Roboto',
+sans-serif;
+$green : #A2D77E;
+$white : #fff;
+$gray: #333;
+/*Basi Mixins*/
+@mixin fontbase {
+  font-family: $fontbase;
+  font-weight: 400;
+}
+
+@mixin fontThin {
+  font-family: $fontbase;
+  font-weight: 100;
+}
+
+@mixin fontBold {
+  font-family: $fontbase;
+  font-weight: 700;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  @include fontbase();
+}
+
+div,
+span,
+ul,
+ol,
+li,
+nav,
+section,
+aside,
+a {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @include fontBold();
+}
+ul, ui li {
+  margin: 0px;
+  padding: 0px;
+}
+/*Imports*/
+@import './scss/navbar';
+@import './scss/login';
+@import './scss/sidebar';
+@import './scss/dashboard';
+@import './scss/rutas';
+
+/*GRID areas and template*/
+.content {
+  grid-area: content;
+}
+
+.dashboard {}
