@@ -19,9 +19,12 @@ const App = () => {
           <Route exact path="/login">
             <Login />
           </Route>
+          <Route exact path="/">
+            <Login />
+          </Route>
           <section className="dashboard">
-            <NavBar navHandler={changeNavStatus}/>
-            <Sidebar showed={navOpen}/>
+            <NavBar navHandler={changeNavStatus} />
+            <Sidebar showed={navOpen} />
             <div className="content">
               <Route exact path="/dashboard">
                 <Dashboard />
