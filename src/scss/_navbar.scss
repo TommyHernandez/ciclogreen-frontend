@@ -18,6 +18,9 @@
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
+    @media (min-width:764px){
+      display: none;
+    }
   }
 
   #menuToggle input {
@@ -60,36 +63,29 @@
   #menuToggle span:nth-last-child(2) {
     transform-origin: 0% 100%;
   }
-
-  /* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
   #menuToggle input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -19px);
     background: $green;
   }
 
-  /*
- * But let's hide the middle one.
- */
   #menuToggle input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
 
-  /*
- * Ohyeah and the last one should go the other direction
- */
   #menuToggle input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, 19px);
   }
-
-  /*
- * And let's slide it in from the left
- */
   #menuToggle input:checked~ul {
     transform: none;
+  }
+  .group {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    @media (min-width:764px) {
+      width: auto;
+    }
   }
 }

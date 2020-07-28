@@ -17,7 +17,7 @@ const Login = ({ history }) => {
 
   const firebaseLogin = async (e) => {
     e.preventDefault();
-    console.log(e.target, e.target.elements);
+    //console.log(e.target, e.target.elements);
     const { mail, pswd } = e.target.elements;
 
     await app
@@ -25,7 +25,7 @@ const Login = ({ history }) => {
       .signInWithEmailAndPassword(mail.value, pswd.value)
       .then((result) => {
         console.log(result);
-        history.push('/');
+        history.push('/dashboard');
       })
       .catch((error) => {
         console.log(error);

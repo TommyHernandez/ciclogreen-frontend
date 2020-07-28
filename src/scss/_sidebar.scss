@@ -11,13 +11,13 @@ aside {
     width: 100%;
     overflow: hidden;
     padding: 8px;
+
     li {
       display: block;
       // height: 24px;
       // line-height: 24px;
-      margin: 8px 0;
+      margin-bottom: 8px;
       list-style: none;
-      border: 1px solid red;
       overflow: hidden;
 
       svg {
@@ -29,11 +29,14 @@ aside {
         padding: 2px 8px 2px 8px;
         @include fontThin();
         text-decoration: none;
-        transition: color ease-in-out 0.2;
+        transition: color ease-in-out 0.2s;
         color: $white;
         font-size: 1.2rem;
 
         &:hover {
+          color: $green;
+        }
+        &.selected {
           color: $green;
         }
       }
@@ -43,8 +46,10 @@ aside {
   &.showed {
     height: 250px;
   }
+
   @media (min-width: 764px) {
     height: 100vh;
-    max-width: 25%;
+    padding-top: 40px;
+    padding-left: 2.1rem;
   }
 }

@@ -1,0 +1,12 @@
+.dashboard-wrapper {
+  padding: 1.2rem;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  .col {
+    flex: 1 1 50%;
+  }
+}
+

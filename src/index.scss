@@ -4,6 +4,7 @@ sans-serif;
 $green : #A2D77E;
 $white : #fff;
 $gray: #333;
+
 /*Basi Mixins*/
 @mixin fontbase {
   font-family: $fontbase;
@@ -37,7 +38,8 @@ li,
 nav,
 section,
 aside,
-a {
+a,
+header {
   box-sizing: border-box;
 }
 
@@ -47,10 +49,13 @@ h3,
 h4 {
   @include fontBold();
 }
-ul, ui li {
+
+ul,
+ul li {
   margin: 0px;
   padding: 0px;
 }
+
 /*Imports*/
 @import './scss/navbar';
 @import './scss/login';
@@ -63,4 +68,17 @@ ul, ui li {
   grid-area: content;
 }
 
-.dashboard {}
+.dashboard {
+  width: 100vw;
+  @media (min-width:764px) {
+    display: grid;
+    grid-template-rows: 40px auto;
+    grid-template-columns: 325px auto;
+    grid-template-areas:
+      'aside nav'
+      'aside content';
+  }
+}
+.MuiSvgIcon-colorSecondary {
+  color: $white !important;
+}

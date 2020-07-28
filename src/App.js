@@ -23,7 +23,7 @@ const App = () => {
             <NavBar navHandler={changeNavStatus}/>
             <Sidebar showed={navOpen}/>
             <div className="content">
-              <Route exact path="/">
+              <Route exact path="/dashboard">
                 <Dashboard />
               </Route>
               <Route exact path="/rutas">
